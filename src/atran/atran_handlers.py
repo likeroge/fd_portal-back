@@ -1,7 +1,6 @@
 from flask import Blueprint, request, jsonify
-from src.models.Aircraft import Aircraft
-
 atran = Blueprint('atran', __name__, url_prefix='/atran')
+# from src.models import Aircraft
 
 
 @atran.route('/dow', methods=['get'])
