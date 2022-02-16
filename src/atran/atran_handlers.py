@@ -1,5 +1,4 @@
 from flask import Blueprint, request, jsonify
-
 from src.models.Aircraft import Aircraft
 
 atran = Blueprint('atran', __name__, url_prefix='/atran')
