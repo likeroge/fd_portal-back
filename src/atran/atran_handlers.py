@@ -4,7 +4,7 @@ atran = Blueprint('atran', __name__, url_prefix='/atran')
 
 
 @atran.route('/dow', methods=['get'])
-def post_ofp():
+def get_all_aircraft():
     # acft = Aircraft()
     # acft.oew = 99999
     # acft.tail = 'rere'

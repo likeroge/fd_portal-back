@@ -2,6 +2,7 @@ from flask import Flask
 from src.users import users_handlers
 from src.atran import atran_handlers
 from src.common import static_handler
+from src.aircraft import aircraft_handlers
 from flask_cors import CORS
 from src.ofp import ofp_handlers
 from mongoengine import connect
@@ -54,7 +55,11 @@ class App:
             {
                 'name': "atran",
                 'handler': atran_handlers.atran
-            }
+            },
+            {
+                'name': "aircraft",
+                'handler': aircraft_handlers.aircraft
+            },
         ]
 
         for route in routes:
