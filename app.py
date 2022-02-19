@@ -1,7 +1,6 @@
 from flask import Flask, send_from_directory, render_template
 from src.users import users_handlers
 from src.atran import atran_handlers
-from src.common import static_handler
 from src.aircraft import aircraft_handlers
 from flask_cors import CORS
 from src.ofp import ofp_handlers
@@ -9,7 +8,6 @@ from mongoengine import connect
 from pymongo import errors
 from werkzeug.middleware.dispatcher import DispatcherMiddleware
 from werkzeug.wrappers import Response
-import os
 
 
 class App:

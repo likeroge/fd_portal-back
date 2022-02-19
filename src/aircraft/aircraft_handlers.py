@@ -23,6 +23,23 @@ def find_aircraft():
         })
 
 
+@aircraft.route('/atran-state', methods=['POST'])
+def save_all_acft_state():
+    aircraft_state = request.get_json()['data']
+    print(aircraft_state[-1])
+    for acft in aircraft_state:
+        acft_in_db = Aircraft.objects.get(tail=acft['tail'])
+        # if acft_in_db['tail'] == 'TESTTEST':
+        acft_in_db['fak'] = acft['fak']
+        acft_in_db['oew'] = acft['oew']
+        acft_in_db['crew'] = acft['crew']
+        acft_in_db['is_water_on_board'] = acft['is_water_on_board']
+        acft_in_db['water'] = acft['water']
+        acft_in_db['dof'] = acft['dof']
+        acft_in_db.save()
+    return jsonify(msg='ok')
+
+
 @aircraft.route('/add', methods=['POST'])
 def add_aircraft_data():
     aircraft_data = request.get_json()['newAcft']
