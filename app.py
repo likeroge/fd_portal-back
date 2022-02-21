@@ -48,8 +48,8 @@ class App:
         # self.app.wsgi_app = DispatcherMiddleware(self.frontend_app)
         # self.app.wsgi_app = DispatcherMiddleware(self.frontend_app, {'/api/v1': self.app})
 
-        self.app.run(host="localhost", port=self.port, debug=self.debug)
-        # self.app.run()
+        # self.app.run(host="localhost", port=self.port, debug=self.debug)
+        self.app.run()
 
     def create_router(self):
         routes = [
