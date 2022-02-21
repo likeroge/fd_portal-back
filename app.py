@@ -19,13 +19,12 @@ class App:
     db_url: str
     frontend_app: Flask
 
-    # def __init__(self, port: int, static: str, debug=True):
-    def __init__(self):
-        # self.port = port
-        # self.debug = debug
-        # self.static_folder = static
-        # self.app = Flask(__name__, static_folder=self.static_folder, static_url_path="")
-        self.app = Flask(__name__)
+    def __init__(self, port: int, static: str, debug=True):
+        self.port = port
+        self.debug = debug
+        self.static_folder = static
+        self.app = Flask(__name__, static_folder=self.static_folder, static_url_path="")
+        # self.app = Flask(__name__)
         self.frontend_app = Flask(__name__, static_folder='../front/build', static_url_path='')
 
         @self.frontend_app.errorhandler(404)
@@ -50,8 +49,7 @@ class App:
         # self.app.wsgi_app = DispatcherMiddleware(self.frontend_app)
         # self.app.wsgi_app = DispatcherMiddleware(self.frontend_app, {'/api/v1': self.app})
 
-        # self.app.run(host="localhost", port=self.port, debug=self.debug)
-        self.app.run()
+        self.app.run(host="localhost", port=self.port, debug=self.debug)
 
     def create_router(self):
         routes = [
