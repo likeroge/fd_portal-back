@@ -21,9 +21,9 @@ class App:
 
     # def __init__(self, port: int, static: str, debug=True):
     def __init__(self):
-        self.port = port
-        self.debug = debug
-        self.static_folder = static
+        # self.port = port
+        # self.debug = debug
+        # self.static_folder = static
         # self.app = Flask(__name__, static_folder=self.static_folder, static_url_path="")
         self.app = Flask(__name__)
         # self.frontend_app = Flask(__name__, static_folder='../front/build', static_url_path='')
