@@ -10,10 +10,16 @@ from flask import Flask
     # app.create_router()
     # app.create_server()
 
-app = Flask(__name__)
+static_folder = os.path.join(os.path.dirname(__file__), '../front/build')
+app = App()
+app.add_db(db_url=config.MONGO_URL)
+app.create_router()
+app.create_server()
+
+# app = Flask(__name__)
 
 
-@app.route("/")
-def index():
-    return 'Hello, World!'
+# @app.route("/")
+# def index():
+#     return 'Hello, World!'
 
