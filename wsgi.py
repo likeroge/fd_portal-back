@@ -1,7 +1,9 @@
 # from main import main
 # from app import App
-# from src.config import config
+from app import App
+from src.config import config
 from flask import Flask
+import os
 
 # if __name__ == '__main__':
     # static_folder = os.path.join(os.path.dirname(__file__), '../front/build')
