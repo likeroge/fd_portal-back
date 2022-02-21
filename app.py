@@ -23,7 +23,8 @@ class App:
         self.port = port
         self.debug = debug
         self.static_folder = static
-        self.app = Flask(__name__, static_folder=self.static_folder, static_url_path="")
+        # self.app = Flask(__name__, static_folder=self.static_folder, static_url_path="")
+        self.app = Flask(__name__)
         self.frontend_app = Flask(__name__, static_folder='../front/build', static_url_path='')
 
         @self.frontend_app.errorhandler(404)
