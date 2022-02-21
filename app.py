@@ -19,7 +19,8 @@ class App:
     db_url: str
     frontend_app: Flask
 
-    def __init__(self, port: int, static: str, debug=True):
+    # def __init__(self, port: int, static: str, debug=True):
+    def __init__(self):
         self.port = port
         self.debug = debug
         self.static_folder = static
