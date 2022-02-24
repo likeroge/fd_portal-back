@@ -1,5 +1,6 @@
 from flask import Blueprint
 from src.models.Aircraft import Aircraft
+
 atran = Blueprint('atran', __name__, url_prefix='/atran')
 
 
